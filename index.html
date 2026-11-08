@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#030303">
+<title>PRIMERA GRAN VELADA DE BOX – LAS ROCAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="vignette"></div>
+<div class="spot s1"></div><div class="spot s2"></div>
+
+<!-- Introducción a pantalla completa -->
+<div id="intro" class="intro">
+  <div class="intro-in">
+    <div class="title"><span>PRIMERA</span> GRAN VELADA</div>
+    <p class="venue">DE BOX <b>◆</b> LAS ROCAS</p>
+    <button id="enter" class="btn" type="button">Entrar con sonido</button>
+    <button id="enterMute" class="link" type="button">Entrar sin sonido</button>
+  </div>
+</div>
+
+<main class="stage" id="stage">
+  <h1 class="title"><span>PRIMERA</span> GRAN VELADA</h1>
+  <p class="venue">DE BOX <b>◆</b> LAS ROCAS</p>
+  <div class="divider"><i></i><b></b><i></i></div>
+  <p class="tagline">“El momento ha llegado. ¿Estás preparado?”</p>
+
+  <section class="countdown" aria-label="Cuenta regresiva">
+    <div class="box"><span id="d">00</span><small>Días</small></div>
+    <div class="box"><span id="h">00</span><small>Horas</small></div>
+    <div class="box"><span id="m">00</span><small>Minutos</small></div>
+    <div class="box"><span id="s">00</span><small>Segundos</small></div>
+  </section>
+
+  <p class="date">8 DE NOVIEMBRE DE 2026 · 9:30&nbsp;A.&nbsp;M.<br><em>Perú · America/Lima (UTC-5)</em></p>
+</main>
+
+<section id="final" class="final" hidden>
+  <div>
+    <h2><span>¡LA PRIMERA</span><span>GRAN VELADA</span><span class="sm">DE BOX DE LAS ROCAS</span><span>HA COMENZADO!</span></h2>
+  </div>
+</section>
+
+<section id="cartelera" class="cartelera" hidden>
+  <div class="hero">
+    <p class="venue">Los grandes de boxeo</p>
+    <h2 class="title"><span>PRIMERA GRAN VELADA</span> DE BOX DE LAS ROCAS 2026</h2>
+    <p class="cart-t">Cartelera oficial</p>
+  </div>
+  <div id="auth" class="auth">
+    <div id="auth-out"><p>CREA TU CUENTA O ENTRA PARA VOTAR · UN SOLO VOTO POR PERSONA Y COMBATE</p>
+      <div class="fields">
+        <input id="uname" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="20" placeholder="Tu nombre de usuario">
+        <input id="pass" type="password" autocomplete="current-password" placeholder="Contraseña (mínimo 6)">
+      </div>
+      <div class="acts"><button id="do-login" class="btn sm" type="button">Entrar</button><button id="do-signup" class="btn sm alt" type="button">Crear cuenta</button></div>
+      <p id="auth-msg" class="note" role="alert" hidden></p></div>
+    <div id="auth-in" hidden><p>VOTANDO COMO <b id="who"></b></p><button id="logout" class="link" type="button">Cerrar sesión</button></div>
+    <p id="auth-note" class="note" hidden>Votaciones sin conectar: completa config.js con tu proyecto de Supabase.</p>
+  </div>
+  <div id="cards" class="cards"></div>
+  <p class="foot">Transmisión en vivo por TikTok: @antonio.26.0 · 9:30 A. M. · Entrada libre</p>
+</section>
+<div id="toast" class="toast" role="alert" hidden></div>
+
+<button id="snd" class="snd" type="button" aria-pressed="false" aria-label="Activar sonido">
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M11 5 6 9H3v6h3l5 4z"/><g class="on"><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></g><g class="off"><path d="m16 9 6 6M22 9l-6 6"/></g>
+  </svg>
+</button>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="votes.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
